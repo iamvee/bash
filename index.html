@@ -25,11 +25,11 @@
 
 
 class: center, middle , inverse, farsi
-# `awk`, wow
-## اسکریپت نویسی awk
+# `bash`
+## اسکریپت نویسی bash
 
-```awk
-BEGIN { print "Hey Fellas" }
+```bash
+echo 'hello dudes!'
 ```
     
 
@@ -37,162 +37,119 @@ BEGIN { print "Hey Fellas" }
 
 
 
-[github](https://github.com/iamvee/awk-wow) • [website](https://iamv.ir/awk-wow) 
+[github](https://github.com/v-env/bash) • [website](https://venv.ir/bash) 
 
 
+---
+class: center, middle , inverse, farsi
+
+## حلقه‌ها
+
+---
+class:  farsi
+
+## دستور `seq`
+
+* دستور `seq` دنباله ای از اعداد را ایجاد می‌کند.  مثلا برای اعداد ۱ تا ۵ می‌نویسیم
+
+```bash
+seq 1 5
+```
+
+```
+1
+2
+3
+4
+5
+```
+
+* این‌جوری می‌شه گام هم براش تعریف کرد که دوتا دو تا بره جلو مثلاً
+
+```bash
+seq 1 2 5
+```
+
+```
+1
+3
+5
+```
+
+---
+class: inverse, farsi
+
+## حلقهٔ `for`
+
+```bash
+for i in $( seq 1 5 )
+do
+  echo $i
+done
+```
+
+```
+1
+2
+3
+4
+5
+```
+
+---
+class: inverse, farsi
+
+## تفاوت `while` و `until`
+
+**حلقهٔ** `while` تا زمانی که شرط **«درست باشه»** ادامه پیدا می‌کنه
+
+**حلقهٔ** `until` تا وقتی که شرط **«درست بشه»** ادامه پیدا می‌کنه، 
+
+  * یعنی قراره `false` باشه همیشه وقتی `true` شد اون موقع تموم می‌شه
 
 
 ---
 class: inverse, farsi
 
-## اکو
-
-دستور زیر را در کامندلاین اجرا کنید. 
-
-```shell
-$ awk '{ print }'
-```
-
- هر دو خط  خروجی یکسانی خواهند داشت و هر رشته ورودی را در خروجی چاپ می‌کند
+## تفاوت `while` و `until`
 
 ```bash
-Salam
-Salam
-he he he ha ha hee hee 
-he he he ha ha hee hee 
-why so serious?
-why so serious?
+COUNTER=0
+while [ $COUNTER -lt 5 ]; do
+    echo counter is $COUNTER
+    let COUNTER+=1 
+done
 ```
 
-با کلید‌های `ctrl` + `D` می‌توانید اجرای برنامه را متوقف کنید
-
-
-
-
-
+```
+counter is 0
+counter is 1
+counter is 2
+counter is 3
+counter is 4
+```
 
 ---
 class: inverse, farsi
 
-## اکو
-
-به طور مشابه از `$0` استفاده کنید  .
-
-```shell
-$ awk '{ print }'
-```
-```shell
-$ awk '{ print $0 }'
-```
-
-
-
----
-class: inverse, farsi
-
-## دوبار اکو
-
-شبیه مثال قبل ولی دوبار تکرار می‌کنه. ولی مثلا اگه بنویسم `"salam"` 
-خروجی `"salamsalam"` خواهد بود. ما بین دو تا `$0` که برای `awk` متغیر
-به حساب میاد، هیچ فاصله‌ای ست نکردیم!
-
-```shell
-$ awk '{ print $0 $0 }'
-```
-
-این یکی هم میشه: فرقش با اولی اینه که بین دو دفعه echo کردن رشته ورودی یه خط فاصله داره و یه `'n\'` را هم خود `print` اضافه می کنه.
-
-```shell
-$ awk '{ print ; print }'
-```
-
-
-
-
-
----
-class: inverse, farsi
-
-## دوبار اکو
-
-یا string وسطش تعریف کنیم. این هم اوکیه .
-
-اینجا کل عبارت `'{ print $0 ", " $0 }'` یه آرگومان به حساب میاد. 
+## تفاوت `while` و `until`
 
 ```bash
-$ awk '{ print $0 ", " $0 }'
+COUNTER=10
+until [ $COUNTER -lt 5 ]; do
+    echo counter is $COUNTER
+    let COUNTER-=1 
+done
 ```
 
-ولی خود `awk` ورودی را این شکلی می‌بینه 
-
-```awk 
-       { print $0 ", " $0 }
 ```
-
----
-class: farsi , inverse
-
-
-## بعد از هر خط بگو «خب»
-
-توی یه فایل shell script بنویسیم
-
-```bash
-#!/bin/bash 
-
-awk '{ print $0 "khob!" }'
+counter is 10
+counter is 9
+counter is 8
+counter is 7
+counter is 6
+counter is 5
 ```
-
-ولی فقط یه حالت خاص داشتیم: `{ print }` که تمام خط ورودی را چاپ می‌کرد.
-به همین دلیله که اگه قراره هر خط، خودش هم چاپ بشه، باید `$0` را هم بنویسیم.
-
-
-
-
----
-class: farsi , inverse
-
-### کاراکترهای خاص در اسکریپت `awk`
- 
-* اجرای فایل awk
-
-*اوکیه*
-```awk 
-BEGIN { print "Hello, It\47s Me!" }
-```
-
-*اوکیه*
-```awk 
-BEGIN { print "Hello, It's Me!" }  
-```
-  
----
-class: farsi , inverse
-
-### کاراکترهای خاص در اسکریپت `awk`
-  
-* اجرا از طریق shell
-
-*اوکیه*
-```bash
-awk 'BEGIN { print "Hello, It\47s Me!" }'  
-```
-
-*`غلطه`*
-```bash
-awk 'BEGIN { print "Hello, It's Me!" }'  
-```
-
----
-class: farsi , inverse
-
-# دانلود
-
-* توضیح لینک ۱ ... [خودِ لینک ۱](https://addresse-linke-1.com)
-* توضیح لینک ۲ ... [خودِ لینک ۲](https://addresse-linke-1.com)
-* توضیح لینک ۳ ... [خودِ لینک ۳](https://addresse-linke-1.com)
-* توضیح لینک ۴ ... [خودِ لینک ۴](https://addresse-linke-1.com)
-* توضیح لینک ۵ ... [خودِ لینک ۵](https://addresse-linke-1.com)
 
 
     </textarea>

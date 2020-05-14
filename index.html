@@ -236,7 +236,25 @@ lIlAcs OUt Of thE dEAd lAnd, mIxIng
 mEmOry And dEsIrE, stIrrIng
 dUll rOOts wIth sprIng rAIn
 ```
+---
+class: inverse, farsi
 
+## `tr`
+
+* چند مورد استفاده دیگر `tr` با استفاده از پایپلاین و `echo`
+
+```bash
+$ text="Hey Jude, don't make it bad"
+$ echo $text | tr "[:upper:]"  "[:lower:]"
+# hey jude, don't make it bad
+$ echo $text | tr "[:lower:][:upper:]" "[:upper:][:lower:]" 
+# hEY jUDE, DON'T MAKE IT BAD
+$ echo $text | tr " " "-"
+# Hey-Jude,-don't-make-it-bad
+$ echo $text | tr "," "\n"
+# Hey Jude
+#  don't make it bad
+```
 
     </textarea>
   <script src="./static/js/remark-latest.min.js" tor thype="text/javascript">

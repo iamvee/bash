@@ -244,16 +244,39 @@ class: inverse, farsi
 * چند مورد استفاده دیگر `tr` با استفاده از پایپلاین و `echo`
 
 ```bash
-$ text="Hey Jude, don't make it bad"
-$ echo $text | tr "[:upper:]"  "[:lower:]"
-# hey jude, don't make it bad
-$ echo $text | tr "[:lower:][:upper:]" "[:upper:][:lower:]" 
-# hEY jUDE, DON'T MAKE IT BAD
-$ echo $text | tr " " "-"
-# Hey-Jude,-don't-make-it-bad
-$ echo $text | tr "," "\n"
-# Hey Jude
-#  don't make it bad
+text="Hey Jude, don't make it bad"
+```
+```bash
+echo $text | tr "[:upper:]"  "[:lower:]"
+```
+
+```
+hey jude, don't make it bad
+```
+
+```bash
+echo $text | tr "[:lower:][:upper:]" "[:upper:][:lower:]" 
+```
+
+```
+hEY jUDE, DON'T MAKE IT BAD
+```
+
+```bash
+echo $text | tr " " "-"
+```
+
+```
+Hey-Jude,-don't-make-it-bad
+```
+
+```bash
+echo $text | tr "," "\n"
+```
+
+```
+Hey Jude
+ don't make it bad
 ```
 
     </textarea>

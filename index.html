@@ -13,7 +13,7 @@
   </script>
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>awk-wow</title>
+  <title>اسکریپت‌نویسی bash</title>
   <style>my.css</style>
   <link rel='stylesheet' href='./static/css/my.css' />
   <link rel="icon" type="image/x-icon" class="js-site-favicon" href="favicon.ico">
@@ -149,6 +149,92 @@ counter is 8
 counter is 7
 counter is 6
 counter is 5
+```
+
+
+---
+class: center, middle , inverse, farsi
+
+## دستور‌های خط فرمان لینوکس
+
+---
+class: inverse, farsi
+
+## `tr`
+
+* فرض کنید فایل `sample.txt` با متن داخلی زیر را در اختیار داریم
+
+```bash
+cat ./sample.txt
+```
+
+```
+April is the cruelest month, breeding
+lilacs out of the dead land, mixing
+memory and desire, stirring
+dull roots with spring rain
+```
+
+---
+class: inverse, farsi
+
+## `tr`
+
+* با دستور `tr` می‌تونیم یه سری پترن‌ها را به پترن‌های دیگه ترجمه کنیم
+
+```bash
+cat sample.txt |  tr aeoui AEOUI
+```
+
+```
+AprIl Is thE crUElEst mOnth, brEEdIng
+lIlAcs OUt Of thE dEAd lAnd, mIxIng
+mEmOry And dEsIrE, stIrrIng
+dUll rOOts wIth sprIng rAIn
+```
+
+* اینجا، هر حرف صدا داری  که با حروف کوچیک نوشته شده باشه را به حروف بزرگ تبدیل می‌کنیم
+
+
+---
+class: inverse, farsi
+
+## `tr`
+
+* می‌تونیم بدون `cat` هم از `tr` استفاده کنیم. اینجوری خروجی رو توی stdout می‌بینیم
+
+```bash
+tr aeoui AEOUI  < sample.txt
+```
+
+```
+AprIl Is thE crUElEst mOnth, brEEdIng
+lIlAcs OUt Of thE dEAd lAnd, mIxIng
+mEmOry And dEsIrE, stIrrIng
+dUll rOOts wIth sprIng rAIn
+```
+
+
+---
+class: inverse, farsi
+
+## `tr`
+
+* یا همون دستور قبلی رو استفاده کنیم ولی خروجی رو توی یه فایل بنویسیم
+
+```bash
+tr aeoui AEOUI  < sample.txt > output.txt
+```
+
+```bash
+cat output.txt
+```
+
+```
+AprIl Is thE crUElEst mOnth, brEEdIng
+lIlAcs OUt Of thE dEAd lAnd, mIxIng
+mEmOry And dEsIrE, stIrrIng
+dUll rOOts wIth sprIng rAIn
 ```
 
 

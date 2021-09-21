@@ -1,32 +1,26 @@
-
-
-class: center, middle , inverse, farsi
 # `bash`
+
+<div dir="rtl">
+
 ## اسکریپت نویسی bash
+
+</div>
 
 ```bash
 echo 'hello dudes!'
 ```
-    
-
-
-
-
 
 [github](https://github.com/v-env/bash) • [website](https://venv.ir/bash) 
 
-
----
-class: center, middle , inverse, farsi
+<div dir="rtl">
 
 ## حلقه‌ها
-
----
-class:  farsi
 
 ## دستور `seq`
 
 * دستور `seq` دنباله ای از اعداد را ایجاد می‌کند.  مثلا برای اعداد ۱ تا ۵ می‌نویسیم
+
+</div>
 
 ```bash
 seq 1 5
@@ -40,7 +34,11 @@ seq 1 5
 5
 ```
 
+<div dir="rtl">
+
 * این‌جوری می‌شه گام هم براش تعریف کرد که دوتا دو تا بره جلو مثلاً
+
+</div>
 
 ```bash
 seq 1 2 5
@@ -52,10 +50,11 @@ seq 1 2 5
 5
 ```
 
----
-class: inverse, farsi
+<div dir="rtl">
 
 ## حلقهٔ `for`
+
+</div>
 
 ```bash
 for i in $( seq 1 5 )
@@ -72,8 +71,7 @@ done
 5
 ```
 
----
-class: inverse, farsi
+<div dir="rtl">
 
 ## تفاوت `while` و `until`
 
@@ -83,11 +81,9 @@ class: inverse, farsi
 
   * یعنی قراره `false` باشه همیشه وقتی `true` شد اون موقع تموم می‌شه
 
-
----
-class: inverse, farsi
-
 ## تفاوت `while` و `until`
+
+</div>
 
 ```bash
 COUNTER=0
@@ -105,10 +101,11 @@ counter is 3
 counter is 4
 ```
 
----
-class: inverse, farsi
+<div dir="rtl">
 
 ## تفاوت `while` و `until`
+
+</div>
 
 ```bash
 COUNTER=10
@@ -127,18 +124,19 @@ counter is 6
 counter is 5
 ```
 
-
----
-class: center, middle , inverse, farsi
+<div dir="rtl">
 
 ## دستور‌های خط فرمان لینوکس
 
----
-class: inverse, farsi
+</div>
 
 ## `tr`
 
+<div dir="rtl">
+
 * فرض کنید فایل `sample.txt` با متن داخلی زیر را در اختیار داریم
+
+</div>
 
 ```bash
 cat ./sample.txt
@@ -151,12 +149,13 @@ memory and desire, stirring
 dull roots with spring rain
 ```
 
----
-class: inverse, farsi
-
 ## `tr`
 
+<div dir="rtl">
+
 * با دستور `tr` می‌تونیم یه سری پترن‌ها را به پترن‌های دیگه ترجمه کنیم
+
+</div>
 
 ```bash
 cat sample.txt |  tr aeoui AEOUI
@@ -169,15 +168,22 @@ mEmOry And dEsIrE, stIrrIng
 dUll rOOts wIth sprIng rAIn
 ```
 
+<div dir="rtl">
+
 * اینجا، هر حرف صدا داری  که با حروف کوچیک نوشته شده باشه را به حروف بزرگ تبدیل می‌کنیم
 
+</div>
 
 ---
 class: inverse, farsi
 
 ## `tr`
 
+<div dir="rtl">
+
 * می‌تونیم بدون `cat` هم از `tr` استفاده کنیم. اینجوری خروجی رو توی stdout می‌بینیم
+
+</div>
 
 ```bash
 tr aeoui AEOUI  < sample.txt
@@ -190,13 +196,13 @@ mEmOry And dEsIrE, stIrrIng
 dUll rOOts wIth sprIng rAIn
 ```
 
-
----
-class: inverse, farsi
-
 ## `tr`
 
+<div dir="rtl">
+
 * یا همون دستور قبلی رو استفاده کنیم ولی خروجی رو توی یه فایل بنویسیم
+
+</div>
 
 ```bash
 tr aeoui AEOUI  < sample.txt > output.txt
